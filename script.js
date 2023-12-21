@@ -16,4 +16,14 @@ async function fetchWeather() {
         console.error(error);
         weatherInfoContainer.textContent = "Error fetching weather data. Please try again.";
     }
+    
+}
+function generateWeatherText(weatherData) {
+    return `
+        Weather Information for ${weatherData.name}, ${weatherData.sys.country}
+        Temperature: ${weatherData.main.temp}°C
+        Humidity: ${weatherData.main.humidity}%
+        Pressure: ${weatherData.main.pressure} hPa
+        Wind Speed: ${weatherData.wind.speed} m/s
+    `;
 }
